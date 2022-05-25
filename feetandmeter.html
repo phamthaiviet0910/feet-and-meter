@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="foot"> (feet)<br>
+    <button onclick="displayMeter()">Covert to Meter</button><br>
+    <span id="show-meter"></span>
+    <br><br>
+    <input type="text" id="meter"> (meter)<br>
+    <button onclick="displayFoot()">Covert to Feet</button><br>
+    <span id="show-foot"></span>
+
+    <script>
+        function footToMeter(foot){
+            return 0.305 * foot
+        }
+
+        function meterToFoot(meter){
+            return 3.279 * meter 
+        }
+
+        function displayMeter(){
+            let foot = +document.getElementById('foot').value
+            let showMeter = document.getElementById('show-meter')
+            showMeter.innerText = foot + ' feet = ' + footToMeter(foot) + ' meter'
+            document.getElementById('foot').value = ''
+        }
+
+        function displayFoot(){
+            let meter = +document.getElementById('meter').value
+            let showMeter = document.getElementById('show-foot')
+            showMeter.innerText = meter + ' meter = ' + meterToFoot(meter) + ' foot'
+            document.getElementById('meter').value = ''
+        }
+    </script>
+</body>
+</html>
